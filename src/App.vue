@@ -37,7 +37,8 @@ export default {
       }
     }
   },
-  async mounted () {
+  // async mounted () {
+  async created () {
     if (this.$store.state.jwt.token.length === 0) return
     const diff = Date.now() - this.$store.state.jwt.received
     try {

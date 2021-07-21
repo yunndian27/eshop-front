@@ -100,7 +100,8 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  if (to.meta.login && store.state.user.account.length === 0) {
+  // if (to.meta.login && store.state.user.account.length === 0) {
+  if (to.meta.login && store.state.jwt.token.length === 0) {
     next('/login')
   } else if (to.meta.admin && store.state.user.role !== 1) {
     next('/')
